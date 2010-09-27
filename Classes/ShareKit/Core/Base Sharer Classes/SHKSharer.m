@@ -127,6 +127,8 @@
 		case SHKShareTypeFile:
 			return [self canShareFile];
 			break;
+    default:
+      return NO;
 	}
 	return NO;
 }
@@ -567,9 +569,9 @@
 		case SHKShareTypeFile:
 			return (item.data != nil);
 			break;
+    default:
+      return NO;
 	}
-	
-	return NO;
 }
 
 - (BOOL)tryToSend
@@ -655,6 +657,8 @@
 		case SHKPendingShare:
 			[self share];
 			break;
+    default:
+      return;      
 	}
 }
 
